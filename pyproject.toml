@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-governance"
+version = "0.1.0"
+description = "Governed agent platform: least-privilege credentials, interruption budgets, durable runs, and an evaluation harness whose grader is graded"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Anton Uralskii", email = "uralskyanton@gmail.com" }]
+keywords = [
+    "mcp",
+    "model-context-protocol",
+    "agents",
+    "llm",
+    "governance",
+    "evaluation",
+    "evals",
+    "agent-reliability",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = ["mcp>=2.0,<3"]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "pytest-asyncio>=0.21"]
+
+[project.scripts]
+agent-governance = "agent_governance.server:main"
+
+[project.urls]
+Homepage = "https://github.com/Geomanti/agent-governance"
+Repository = "https://github.com/Geomanti/agent-governance"
+Issues = "https://github.com/Geomanti/agent-governance/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

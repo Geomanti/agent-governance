@@ -1,0 +1,33 @@
+# Byte-compiled / caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# Test / tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local run state: run JSON and audit logs are *outputs*, not source.
+# They are regenerated per run and must never be committed as if they were
+# evidence -- a snapshot from one machine is not a source of truth.
+runs/
+*.jsonl
+audit*.json
+outcome*.json
+
+# Editors
+.vscode/
+.idea/
+*.swp
+.DS_Store
